@@ -69,9 +69,9 @@ showdown.subParser('makehtml.images', function (text, options, globals) {
       result += ' title="' + title + '"';
     }
 
-    if (width && height) {
-      width  = (width === '*') ? 'auto' : width;
-      height = (height === '*') ? 'auto' : height;
+    if (width || height) {
+      width  = (width === '*' || !width) ? 'auto' : width;
+      height = (height === '*' || !height) ? 'auto' : height;
 
       result += ' width="' + width + '"';
       result += ' height="' + height + '"';
